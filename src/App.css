@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-padding-top: 100px;
+  }
+  h1, h2, h3, h4, h5, h6, .font-poppins {
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .animate-gradient-move {
+    background-size: 200% 200%;
+    animation: gradient-move 8s ease-in-out infinite;
+  }
+  
+  .shine-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shine-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .shine-effect:hover::before {
+    left: 100%;
+  }
+  
+  .gradient-hover {
+    background: linear-gradient(135deg, #1f2937, #374151);
+    transition: all 0.3s ease;
+  }
+  
+  .gradient-hover:hover {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Task Completion Animation */
+  .task-complete {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: black !important;
+    border-color: #059669 !important;
+  }
+
+  .task-complete p {
+    text-decoration: line-through !important;
+    color: black !important;
+    font-weight: bold !important;
+  }
+
+  .task-complete:hover p {
+    color: black !important;
+  }
+
+  /* Remove hover effects for completed tasks */
+  .task-complete.gradient-hover:hover {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Override any conflicting styles */
+  .task-complete.shine-effect {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+  }
+
+  .task-complete .group-hover\:font-bold {
+    font-weight: bold !important;
+  }
+
+  .task-complete .group-hover\:text-white {
+    color: black !important;
+  }
+
+  /* Floating Particles */
+  .particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .particle {
+    position: absolute;
+    background: rgba(59, 130, 246, 0.6);
+    border-radius: 50%;
+    animation: float 20s infinite linear;
+  }
+
+  .particle:nth-child(1) {
+    width: 4px;
+    height: 4px;
+    left: 10%;
+    animation-duration: 15s;
+    animation-delay: 0s;
+  }
+
+  .particle:nth-child(2) {
+    width: 6px;
+    height: 6px;
+    left: 20%;
+    animation-duration: 25s;
+    animation-delay: 2s;
+  }
+
+  .particle:nth-child(3) {
+    width: 3px;
+    height: 3px;
+    left: 30%;
+    animation-duration: 18s;
+    animation-delay: 4s;
+  }
+
+  .particle:nth-child(4) {
+    width: 5px;
+    height: 5px;
+    left: 40%;
+    animation-duration: 22s;
+    animation-delay: 6s;
+  }
+
+  .particle:nth-child(5) {
+    width: 4px;
+    height: 4px;
+    left: 50%;
+    animation-duration: 20s;
+    animation-delay: 8s;
+  }
+
+  .particle:nth-child(6) {
+    width: 7px;
+    height: 7px;
+    left: 60%;
+    animation-duration: 28s;
+    animation-delay: 10s;
+  }
+
+  .particle:nth-child(7) {
+    width: 3px;
+    height: 3px;
+    left: 70%;
+    animation-duration: 16s;
+    animation-delay: 12s;
+  }
+
+  .particle:nth-child(8) {
+    width: 5px;
+    height: 5px;
+    left: 80%;
+    animation-duration: 24s;
+    animation-delay: 14s;
+  }
+
+  .particle:nth-child(9) {
+    width: 4px;
+    height: 4px;
+    left: 90%;
+    animation-duration: 19s;
+    animation-delay: 16s;
+  }
+
+  .particle:nth-child(10) {
+    width: 6px;
+    height: 6px;
+    left: 5%;
+    animation-duration: 26s;
+    animation-delay: 18s;
+  }
+
+  .particle:nth-child(11) {
+    width: 3px;
+    height: 3px;
+    left: 15%;
+    animation-duration: 17s;
+    animation-delay: 20s;
+  }
+
+  .particle:nth-child(12) {
+    width: 5px;
+    height: 5px;
+    left: 25%;
+    animation-duration: 23s;
+    animation-delay: 22s;
+  }
+
+  .particle:nth-child(13) {
+    width: 4px;
+    height: 4px;
+    left: 35%;
+    animation-duration: 21s;
+    animation-delay: 24s;
+  }
+
+  .particle:nth-child(14) {
+    width: 6px;
+    height: 6px;
+    left: 45%;
+    animation-duration: 27s;
+    animation-delay: 26s;
+  }
+
+  .particle:nth-child(15) {
+    width: 3px;
+    height: 3px;
+    left: 55%;
+    animation-duration: 18s;
+    animation-delay: 28s;
+  }
+
+  .glass-card .task-animate {
+    animation: floatTask 3s ease-in-out infinite alternate;
+  }
+  .glass-card .task-animate:hover {
+    animation: popTask 0.4s cubic-bezier(.4,2,.6,1) forwards;
+  }
+  @keyframes floatTask {
+    0% { transform: translateY(0px) scale(1); box-shadow: 0 2px 8px 0 rgba(99,102,241,0.08); }
+    100% { transform: translateY(-10px) scale(1.03); box-shadow: 0 8px 24px 0 rgba(99,102,241,0.16); }
+  }
+  @keyframes popTask {
+    0% { transform: scale(1); box-shadow: 0 2px 8px 0 rgba(236,72,153,0.08); }
+    80% { transform: scale(1.08); box-shadow: 0 12px 32px 0 rgba(236,72,153,0.18); }
+    100% { transform: scale(1.04); box-shadow: 0 6px 16px 0 rgba(99,102,241,0.12); }
+  }
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
