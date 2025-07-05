@@ -44,7 +44,7 @@ TaskFlow is a beautifully designed, productivity-focused task management app bui
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/taskflow.git
+   git clone https://github.com/usman-7455/TaskFlow.git
    cd taskflow
    ```
 
